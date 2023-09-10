@@ -12,5 +12,3 @@ Por ejemplo:
 # La J es una Y
 # La Y es una I
 # La S no tiene E. 
-
-Other thing
