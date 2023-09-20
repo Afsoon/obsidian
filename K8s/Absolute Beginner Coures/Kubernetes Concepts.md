@@ -13,4 +13,15 @@ Crea un **POD** con una instancia de `nginx`.
 
 ```kubectl get pods```
 
-Nos devuelve una lista de todos los **PODs** activos.
+Nos devuelve una lista de todos los **PODs**, su estado, cuantos hay, uptime y veces que se ha reiniciado
+
+```kubectl describe pod nginx```
+
+Nos da información más detallada de un **POD** en concreto.
+
+```kubectl get pods -o wide```
+
+Nos da algo más de información sobre todos los **PODs**
+
+## References
+[K8s official documentation](https://kubernetes.io/docs/concepts/workloads/pods/)
