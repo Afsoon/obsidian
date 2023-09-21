@@ -13,6 +13,15 @@ Crea un **POD** con una instancia de `nginx`.
 
 ```kubectl get pods```
 
+| Columna  | Explicación                                                                      |
+| -------- | -------------------------------------------------------------------------------- |
+| Name     | Nombre del Pod                                                                   |
+| Ready    | Numero de contenedores en estado ready/ Numero total de contenedores en el POD   |
+| Status   | Estado de los contenedores, si hay varios y alguno en error sale en error Reason |
+| Restarts | Cuantas veces se ha reiniciado                                                   |
+| Age      | Cuanto tiempo lleva activo                                                       |
+
+
 Nos devuelve una lista de todos los **PODs**, su estado, cuantos hay, uptime y veces que se ha reiniciado
 
 ```kubectl describe pod nginx```
@@ -84,6 +93,12 @@ spec:
         - name: POSTGRES_PASSWORD
           value: mysecretpassword
 ```
+
+### Comandos
+- Ver el contexto actual: `kubectl config current-context`
+- Ver el namespace usado por el contexto: `kubectl config view --minify --output 'jsonpath={..namespace}'`
+- Borrar un pod: `kubectl delete pod <name>`
+- 
 
 
 ### IDE
