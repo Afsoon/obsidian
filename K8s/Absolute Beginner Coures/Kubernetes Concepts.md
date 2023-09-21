@@ -94,11 +94,11 @@ spec:
           value: mysecretpassword
 ```
 
+Si el `metadata` esta vacio, no me deja crear un recurso en K8s.
 ### Comandos
 - Ver el contexto actual: `kubectl config current-context`
 - Ver el namespace usado por el contexto: `kubectl config view --minify --output 'jsonpath={..namespace}'`
 - Borrar un pod: `kubectl delete pod <name>`
-- 
 
 
 ### IDE
