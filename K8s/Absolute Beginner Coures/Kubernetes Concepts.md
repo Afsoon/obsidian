@@ -23,5 +23,49 @@ Nos da información más detallada de un **POD** en concreto.
 
 Nos da algo más de información sobre todos los **PODs**
 
+## Declarando POD con YAML
+
+Los ficheros para **PODs**, **Replica Sets** y demás siguen la misma estructura de fichero YAML
+
+```yaml
+apiVersion:
+kind:
+metadata:
+
+spec:
+```
+
+- `apiVersion`: Es la version de la API de K8s que estamos usando para crear los objetos
+- `kind`: Qué tipo de objeto queremos crear.
+
+Los posibles valores de los puntos anteriores son
+
+| Kind       | Version |
+| ---------- | ------- |
+| Pod       | v1      |
+| Service    | v1      |
+| ReplicaSet | apps/v1 |
+| Deployment | apps/v1 |
+
+- `metadata`: Son datos para identificar el objeto en formato de diccionario y tiene unas claves predefinidas, pero la propiedad labels puedes insertar los valores que tú quieras.
+- `spec`: Son los contenedores en formato de una lista de Diccionarios.
+
+Ejemplo de POD Yaml
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+	name: myapp-pod
+	labels:
+		app: myapp
+		type: front-end
+spec:
+	containers:
+		- name: nginx-container
+		  image: nginx
+```
+
+Para 
+
 ## References
 [K8s official documentation](https://kubernetes.io/docs/concepts/workloads/pods/)
