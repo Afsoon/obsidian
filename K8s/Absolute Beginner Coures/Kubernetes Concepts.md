@@ -65,7 +65,11 @@ spec:
 		  image: nginx
 ```
 
-Para 
+Para ejecutar este yaml hay que hacer `kubectl create/apply -f pod-definition.yml`
+
+
+### IDE
+Puedes configurar schemas en la app de YAML para tener validators custom
 
 ## References
 [K8s official documentation](https://kubernetes.io/docs/concepts/workloads/pods/)
