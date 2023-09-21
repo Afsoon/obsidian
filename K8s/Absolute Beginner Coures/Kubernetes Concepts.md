@@ -67,6 +67,24 @@ spec:
 
 Para ejecutar este yaml hay que hacer `kubectl create/apply -f pod-definition.yml`
 
+Env variables
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: postgres
+  labels:
+    tier: db-tier
+spec:
+  containers:
+    - name: postgres
+      image: postgres
+      env:
+        - name: POSTGRES_PASSWORD
+          value: mysecretpassword
+```
+
 
 ### IDE
 Puedes configurar schemas en la app de YAML para tener validators custom
