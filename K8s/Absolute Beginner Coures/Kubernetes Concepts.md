@@ -1,4 +1,5 @@
 # Pods
+
 El objetivo de Kubernets es desplegar nuestros contenedores en nuestros worker nodes pero nosotros nunca trataremos directamente con los **worker nodes**. K8s desplegará nuestro contenedor en una **Pod** que es una instancia de nuestra aplicación. 
 
 Si tenemos un K8s cluster con un **Woker node** donde tenemos un solo **POD**, si el numero de usuarios se incrementa, lo que hacemos es crear un nuevo **POD**, no añadir otra instancia dentro del **POD**. Si los usuarios siguen creciendo y el **Worker node** esta al limite, lo que pasaría es que necesitamos un nuevo **Worker node** y este con un nuevo **POD**.
@@ -99,6 +100,16 @@ Si el `metadata` esta vacio, no me deja crear un recurso en K8s.
 - Ver el contexto actual: `kubectl config current-context`
 - Ver el namespace usado por el contexto: `kubectl config view --minify --output 'jsonpath={..namespace}'`
 - Borrar un pod: `kubectl delete pod <name>`
+
+# Controllers
+
+Los **Controllers** son los responsables de monitorizar los recursos de K8s.
+
+## Replication controller & Replica Set
+
+**Replication controller** nos ayudar a tener varias instancias ejecutando en un mismo **POD** para tener **HA**.
+
+Si el sistema esta bajo mucha carga, **replication controller** puede ir creando mas instancias para manejar el sistema, para tener **Load Balancing & Scaling**.
 
 
 ### IDE
