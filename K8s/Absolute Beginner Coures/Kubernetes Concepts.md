@@ -111,7 +111,72 @@ Los **Controllers** son los responsables de monitorizar los recursos de K8s.
 
 Si el sistema esta bajo mucha carga, **replication controller** puede ir creando mas instancias para manejar el sistema, para tener **Load Balancing & Scaling**.
 
+**Replication controller** es el método antiguo y **Replica Set** es el nuevo.
 
+```yaml
+apiVersion: v1
+kind: ReplicacionController
+metadata:
+	name: myapp-rc
+	labels:
+		app: myapp
+		type: frontend
+
+spec:
+	template:
+		metadata:
+		  name: postgres
+		  labels:
+			tier: db-tier
+		spec:
+		  containers:
+			- name: postgres
+			  image: postgres
+			  env:
+				- name: POSTGRES_PASSWORD
+				  value: mysecretpassword
+
+	replicas: 3
+	```
+
+En  `template` tenemos que poner toda la definición del **POD** pero sin el `kind` ni `apiVersion` y luego cómo hijo directo de `spec` tenemos `replicas` que es el numero de instancias que queremos.
+
+Con esta definición ya solo tenemos que hacer `kubectl create -f rc-definition.yml` y para ver si se ha ejecutado correctamente hay que usar `kubectl get replicationcontroller`
+
+### Replication Set
+
+Es casi igual pero con pequeñas diferencias.
+
+```yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+	name: myapp-replicaset
+	labels:
+		app: myapp
+		type: frontend
+
+spec:
+	template:
+		metadata:
+		  name: postgres
+		  labels:
+			tier: db-tier
+		spec:
+		  containers:
+			- name: postgres
+			  image: postgres
+			  env:
+				- name: POSTGRES_PASSWORD
+				  value: mysecretpassword
+
+	replicas: 3
+	selector:
+		matchLabels:
+			type: front-end
+```
+
+La diferencia es el nuevo atributo llamado `selector` porque al **Replica Set** le podemos pasar recursos que queremos que maneje por nosotros pero no requiere ni de HA o ALB. 
 ### IDE
 Puedes configurar schemas en la app de YAML para tener validators custom
 
