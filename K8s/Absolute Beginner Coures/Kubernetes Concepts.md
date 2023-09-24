@@ -177,6 +177,25 @@ spec:
 ```
 
 La diferencia es el nuevo atributo llamado `selector` porque al **Replica Set** le podemos pasar recursos que queremos que maneje por nosotros pero no requiere ni de HA o ALB. 
+
+Como siempre, para ejecutar es con `kubectl create -f rs-definition.yml` y para ver si se ha ejecutado correctamente `kubectl get replicaset`
+
+## Labels y Selectors
+
+¿Por qué los usamos?
+
+Imaginemos que hemos desplegado 3 instancias de nuestra aplicación front end en tres partes. Estos **PODs** están desplegados en un cluster con decenas o centenares de **PODs**. ¿Cómo puede saber nuestro **ReplicaSet** que **PODs** tiene que monitorizar? Pues a través de los labels y selectors.
+
+Si creamos **PODs** individualmente y luego creamos un objeto **ReplicaSet** que hace match con el `selector`, si el número de matchs es igual al número de `replicas`, la **ReplicaSet** no va a crear nuevas instancias porque ya tenemos el número necesario para ello.
+
+Siempre es necesario incluir la definición de un **POD**, porque si los **PODs** existen de antes y luego en el futuro falla alguno, la **ReplicaSet** tiene que saber como crear un nuevo **POD**.
+
+## Scale
+
+¿Cómo escalar?
+
+- Cambiando la definición manualmente y reapplic
+
 ### IDE
 Puedes configurar schemas en la app de YAML para tener validators custom
 
