@@ -194,8 +194,16 @@ Siempre es necesario incluir la definición de un **POD**, porque si los **PODs*
 
 ¿Cómo escalar?
 
-- Cambiando la definición manualmente y reapplic
+- Cambiando la definición manualmente y reaplicando la definición `kubectl replace -f replicaset-definition.yml`
+- `kubectl scale --replicas=6 -f replicaset-definition-yml`
+- `kubect scale --replicas=6 replicaset myapp-replicaset`
+- Es posible basado en la carga pero más adelante.
 
+## Notas de la demo
+
+Si creamos pods a manos que superen el número de `replicas`, la **ReplicaSet** controller automáticamente borrará esos **PODS**.
+
+Podemos usar `kubectl edit replicaset myapp-replicaset` y este nos abre nuestro editor favorito para modificar el fichero. Todos los cambios guardados se **s**
 ### IDE
 Puedes configurar schemas en la app de YAML para tener validators custom
 
