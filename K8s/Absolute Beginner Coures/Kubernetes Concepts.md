@@ -173,7 +173,7 @@ spec:
 	replicas: 3
 	selector:
 		matchLabels:
-			type: front-end
+			tier: db-tier
 ```
 
 La diferencia es el nuevo atributo llamado `selector` porque al **Replica Set** le podemos pasar recursos que queremos que maneje por nosotros pero no requiere ni de HA o ALB. 
@@ -203,7 +203,7 @@ Siempre es necesario incluir la definición de un **POD**, porque si los **PODs*
 
 Si creamos pods a manos que superen el número de `replicas`, la **ReplicaSet** controller automáticamente borrará esos **PODS**.
 
-Podemos usar `kubectl edit replicaset myapp-replicaset` y este nos abre nuestro editor favorito para modificar el fichero. Todos los cambios guardados se **s**
+Podemos usar `kubectl edit replicaset myapp-replicaset` y este nos abre nuestro editor favorito para modificar el fichero. Todos los cambios guardados se **sincronizán atuomaticamente** con el cluster de K8s.
 ### IDE
 Puedes configurar schemas en la app de YAML para tener validators custom
 
