@@ -276,6 +276,8 @@ Pero esto no modifica el fichero, sino solo el deployment que esta ejecutandose 
 
 K8s por debajo creara un nuevo **ReplicaSet** y a la vez que crea un nuevo **POD** en la nueva **ReplicaSet**, se va destruyendo otro **POD** en el antiguo **ReplicaSet**. Asi tantas veces como **PODs** hay y una vez que el antiguo esta 0, es destruido el objeto.
 
+Podemos configurar el % de PODs que destruimos para ir haciedo el rollout de los **PODs**.
+
 ### Rollback
 
 Si vemos que hay un problema con la nueva versión podemos hacer `kubectl rollout undo deployt/myapp-deployment` para volver a la versión antigua.
