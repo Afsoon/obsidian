@@ -245,9 +245,32 @@ Luego como siempre ejecutamos `kubectl create -f deployment-definition.yml`
 
 Esto crear un recurso llamado `Deployment` que a la vez crea un `ReplicaSet` y esto a su vez los `PODs` indicados.
 
+### Soluciones
+
+Puedes crear un comando mediante cli por ejemplo:
+
+`kubectl create deployment httpd-frontend --image=http:2.4-alpine --replicas=3`
+
+Crea un environment con 3 **PODs** en un **Replica Set** bajo el entorno del **Deployment** `http-frontend`
 ## Update & Rollback
 
+Cada vez que creamos un `Rollout` K8s crea una versión del estado actual, para permitirnos hacer rollback en caso de error. Para el estado de un rollout tenemos que hacer `kubectl rollout status deployment/myapp-deployment`. Para ver el histórico de versiones de un **deployment** es con `kubectl rollout history deployment/myapp-deployment`.
 
+Hay dos estrategias de **deployment**:
+
+- **Recreate**: Consiste en acabar con todos los **PODs** y luego ejecutar la nueva versión de los **PODs**. Uno de las pegas que hay caída del servicio durante el tiempo que estamos destruyendo y recreando los **PODs**.
+- **Rolling Update** (por defecto): Vamos cambiando poco a poco los **PODs** por la nueva versión.
+
+Una forma de empezar el proceso de **Rollout** es:
+
+- Modificar el yml
+- Lanzar `kubectl apply -f deployment-definition.yml`
+
+Si queremos modificar la imagen de un **POD** podemos usar la CLI directamente:
+
+`kubectl set image deployment/myapp-deployment nginx-container=nginx.1.9.1`
+
+Pero esto no modifica el fichero, sino solo el deployment que esta ejecutandose en el momento.
 
 ### IDE
 Puedes configurar schemas en la app de YAML para tener validators custom
