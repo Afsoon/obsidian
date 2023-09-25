@@ -292,6 +292,17 @@ Por defecto el motivo de los cambios no se guarda en el registro, para forzar gu
 
 Si usamos `kubectl edit` también le tenemos que pasar el argumento `--record`, por defecto no va a ir guardando todos los cambios en el histórico. Con `set image` pasa lo mismo.
 
+# Networking
+
+Las IPs se asignan a un **POD** y no a un contenedor, en el caso de crear un **POD** con varios contenedores. Cada vez que se recrea un **POD** cambia su IP, asi que **NO** es buena idea usar una IP hardcodeada.
+
+Cuando estamos en un sistema multi nodo, K8s no hace nada por crear un Networking, es más, espera que nosotros le indiquemos como funciona la red con los siguientes requisitos:
+
+- Todos los **PODs/Containers** se puede comunicar con el resto y viceverse sin **NAT**
+- Todos los **Containers/PODs** se puede comunicar con uno sin **NAT**
+
+Servicios como Calico o Flannel si estamos en entornos **Self hosted**
+
 ### IDE
 Puedes configurar schemas en la app de YAML para tener validators custom
 
