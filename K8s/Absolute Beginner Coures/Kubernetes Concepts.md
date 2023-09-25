@@ -203,7 +203,19 @@ Siempre es necesario incluir la definición de un **POD**, porque si los **PODs*
 
 Si creamos pods a manos que superen el número de `replicas`, la **ReplicaSet** controller automáticamente borrará esos **PODS**.
 
-Podemos usar `kubectl edit replicaset myapp-replicaset` y este nos abre nuestro editor favorito para modificar el fichero. Todos los cambios guardados se **sincronizán atuomaticamente** con el cluster de K8s.
+Podemos usar `kubectl edit replicaset myapp-replicaset` y este nos abre nuestro editor favorito para modificar el fichero. Todos los cambios guardados se **sincronizán automaticamente** con el cluster de K8s.
+
+# Deployments
+
+Estrategias de manejo de **deployments**:
+
+- Rolling updates: Ir de uno en uno hasta cambiar la version de todos los PODs
+- Rollback: Si la actualización es fallida, poder volver a la versión antigua.
+- Cambiar el **environment** parando las instancias y luego reanunando los PODs.
+
+## Definition
+
+
 ### IDE
 Puedes configurar schemas en la app de YAML para tener validators custom
 
