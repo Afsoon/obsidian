@@ -264,13 +264,31 @@ Hay dos estrategias de **deployment**:
 Una forma de empezar el proceso de **Rollout** es:
 
 - Modificar el yml
-- Lanzar `kubectl apply -f deployment-definition.yml`
+- Lanzar `kubectl apply -f deployment-definition.yml` para actualizar el deployment.
 
 Si queremos modificar la imagen de un **POD** podemos usar la CLI directamente:
 
 `kubectl set image deployment/myapp-deployment nginx-container=nginx.1.9.1`
 
 Pero esto no modifica el fichero, sino solo el deployment que esta ejecutandose en el momento.
+
+### ¿Cómo funciona **Rolling Update**?
+
+K8s por debajo creara un nuevo **ReplicaSet** y a la vez que crea un nuevo **POD** en la nueva **ReplicaSet**, se va destruyendo otro **POD** en el antiguo **ReplicaSet**. Asi tantas veces como **PODs** hay y una vez que el antiguo esta 0, es destruido el objeto.
+
+### Rollback
+
+Si vemos que hay un problema con la nueva versión podemos hacer `kubectl rollout undo deployt/myapp-deployment` para volver a la versión antigua.
+
+### Demo
+
+Por defecto el motivo de los cambios no se guarda en el registro, para forzar guardar el motivo de los cambios hay que hacer:
+
+`kubectl create -f deployment.yaml --record`
+
+**¿No es algo que se puede añadir a posteriori?**, tiene que estar desde el principio.
+
+Si usamos `kubectl edit` también le tenemos que pasar el argumento `--record`, por defecto no va a ir guardando todos los cambios en el histórico. Con `set image` pasa lo mismo.
 
 ### IDE
 Puedes configurar schemas en la app de YAML para tener validators custom
