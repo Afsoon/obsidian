@@ -245,6 +245,10 @@ Luego como siempre ejecutamos `kubectl create -f deployment-definition.yml`
 
 Esto crear un recurso llamado `Deployment` que a la vez crea un `ReplicaSet` y esto a su vez los `PODs` indicados.
 
+## Update & Rollback
+
+
+
 ### IDE
 Puedes configurar schemas en la app de YAML para tener validators custom
 
