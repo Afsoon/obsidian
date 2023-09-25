@@ -100,6 +100,7 @@ Si el `metadata` esta vacio, no me deja crear un recurso en K8s.
 - Ver el contexto actual: `kubectl config current-context`
 - Ver el namespace usado por el contexto: `kubectl config view --minify --output 'jsonpath={..namespace}'`
 - Borrar un pod: `kubectl delete pod <name>`
+- Ver todo el cluster: `kubect get all`
 
 # Controllers
 
@@ -213,8 +214,36 @@ Estrategias de manejo de **deployments**:
 - Rollback: Si la actualización es fallida, poder volver a la versión antigua.
 - Cambiar el **environment** parando las instancias y luego reanunando los PODs.
 
-## Definition
+## Definition YAML
 
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+	name: myapp-deployment
+	labels:
+		app: myapp
+		type: front-end
+spec
+	template:
+		metadata:
+			name: myapp-pod
+			labels:
+				app: myapp
+				type: front-end
+		spec:
+			containers:
+			- name: nginx-container
+			  image: nginx
+	replicas:3
+	selector:
+		matchLabels:
+			type: front-end
+```
+
+Luego como siempre ejecutamos `kubectl create -f deployment-definition.yml`
+
+Esto crear un recurso llamado `Deployment` que a la vez crea un `ReplicaSet` y esto a su vez los `PODs` indicados.
 
 ### IDE
 Puedes configurar schemas en la app de YAML para tener validators custom
