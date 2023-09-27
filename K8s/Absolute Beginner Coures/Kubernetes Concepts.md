@@ -350,6 +350,22 @@ spec:
 Si no especificamos `port` por defecto usa el valor de `targetPort`. Si no especificamos `nodePort`, se selecciona uno automáticamente empezando por el 30.000.
 
 Igual que **ReplicaSet** y **Deployment**, los **Services** usando `selector` para saber con que **PODs** se tienen que conectar.
+
+Si **NodePort** detecta más de un **POD** se enlanza con todos los **PODs** y la forma de usa para saber a que **POD** mandarle la request es:
+
+- **RandomAlgorithm**
+- **SessionAffinity**
+
+Si estamos en un sistema multi-nodo, K8s automáticamente nos crea un **Service** a través de todos los nodos. Donde expone el mismo puerto en todos los nodos.
+
+## ClusterIP
+
+Mencionado antes, un **ClusterIP** es un servicio que se encarga de permitir la comunicación entre distintos componentes dentro del nodo de K8s. Esta es la unidad base para desplegar microservicios en K8s, ya que nos permite agrupar distintos **PODs** bajo una interfaz única de comunicación. 
+
+Su definición es muy parecido a un ****
+## Load Balancer
+
+
 ### IDE
 Puedes configurar schemas en la app de YAML para tener validators custom
 
