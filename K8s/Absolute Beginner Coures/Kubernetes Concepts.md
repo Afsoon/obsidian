@@ -303,6 +303,21 @@ Cuando estamos en un sistema multi nodo, K8s no hace nada por crear un Networkin
 
 Servicios como Calico o Flannel si estamos en entornos **Self hosted**
 
+# Services
+
+Los servicios permite la comunicación entre **componentes** y con el mundo exterior. **Services** permite hacer un montón de cosas pero vamos a centrarnos en un caso de uso, conectarnos a una WebApp que tenemos en un **POD** desde el exterior.
+
+### ¿Cómo nos conectamos a un POD?
+
+El nodo de K8s tiene una IP asignada que es `192.168.1.2` y el **host** tiene la IP `192.168.1.10` y la IP interna del **POD** es `10.244.0.2` y la red interna es `10.244.0.0`. Por defecto, no podemos conectarnos directamente a la IP del **POD** porque es una red distinta. 
+
+Si hacemos un curl a la IP del **POD**, recibimos respuesta pero en el momento que creemos otro **POD** la IP va a cambiar. Lo que queremos es hacer una petición al nodo de K8s y que este nos devuelva el resultado del antiguo `curl`.
+
+Esto ultimo se consigue usando un **Service** donde exponemos un puerto. El servicio escuchará las peticiones en ese puerto y reenviará esa petición a la red interna del **POD**. Esto servicios son llamadas **NodePort Service**.
+
+## Tipos de servicios
+
+- **NodePort**: Expone un puerto en el 
 ### IDE
 Puedes configurar schemas en la app de YAML para tener validators custom
 
