@@ -100,7 +100,8 @@ Si el `metadata` esta vacio, no me deja crear un recurso en K8s.
 - Ver el contexto actual: `kubectl config current-context`
 - Ver el namespace usado por el contexto: `kubectl config view --minify --output 'jsonpath={..namespace}'`
 - Borrar un pod: `kubectl delete pod <name>`
-- Ver todo el cluster: `kubect get all`
+- Ver todo el cluster: `kubectl get all`
+- Ver pods y services: `kubectl get pods,svc`
 
 # Controllers
 
