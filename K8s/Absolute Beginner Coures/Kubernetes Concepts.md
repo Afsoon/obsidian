@@ -313,11 +313,43 @@ El nodo de K8s tiene una IP asignada que es `192.168.1.2` y el **host** tiene la
 
 Si hacemos un curl a la IP del **POD**, recibimos respuesta pero en el momento que creemos otro **POD** la IP va a cambiar. Lo que queremos es hacer una petición al nodo de K8s y que este nos devuelva el resultado del antiguo `curl`.
 
-Esto ultimo se consigue usando un **Service** donde exponemos un puerto. El servicio escuchará las peticiones en ese puerto y reenviará esa petición a la red interna del **POD**. Esto servicios son llamadas **NodePort Service**.
+Esto ultimo se consigue usando un **Service** donde exponemos un puerto. El servicio escuchará las peticiones en ese puerto y reenviará esa petición a la red interna del **POD** y al puerto indicado. Esto servicios son llamadas **NodePort Service**.
 
 ## Tipos de servicios
 
-- **NodePort**: Expone un puerto en el 
+- **NodePort**: Expone un puerto en el nodo para comunicarnos con un **POD**.
+- **ClusterIP**: Crea un servicio dentro del cluster que permite la comunicación entre servicios.
+- **LoadBalancer**: Un servicio que redistribuye la carga entre distintos **PODs**
+## NodePort
+
+Un servicio de tipo **NodePort** consta de las siguientes partes:
+
+- **TargetPort**: Puerto del **POD** donde espera recibir las peticiones.
+- **Port**: Puerto del **Service** que se enlazará con él **TargetPort**.
+- **NodePort**: Puerto del K8s node que se expone, por defecto esta en el rango de 30.000 - 32.767
+- **ClusterIP**: IP del **Service**.
+
+Ahora pasamos a como definir un servicio
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata: 
+	name: myapp-service
+spec:
+	type: NodePort
+	ports:
+		- targetPort: 80
+		  port: 80
+		  nodePort: 30008
+	selector:
+		app: myapp
+		type: front-end
+```
+
+Si no especificamos `port` por defecto usa el valor de `targetPort`. Si no especificamos `nodePort`, se selecciona uno automáticamente empezando por el 30.000.
+
+Igual que **ReplicaSet** y **Deployment**, los **Services** usando `selector` para saber con que **PODs** se tienen que conectar.
 ### IDE
 Puedes configurar schemas en la app de YAML para tener validators custom
 
