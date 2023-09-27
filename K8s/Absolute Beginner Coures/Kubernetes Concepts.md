@@ -362,9 +362,44 @@ Si estamos en un sistema multi-nodo, K8s automáticamente nos crea un **Service*
 
 Mencionado antes, un **ClusterIP** es un servicio que se encarga de permitir la comunicación entre distintos componentes dentro del nodo de K8s. Esta es la unidad base para desplegar microservicios en K8s, ya que nos permite agrupar distintos **PODs** bajo una interfaz única de comunicación. 
 
-Su definición es muy parecido a un ****
+Su definición es muy parecido a un **NodePort**
+```yaml
+apiVersion: v1
+kind: Service
+metadata: 
+	name: backend
+spec:
+	type: ClusterIP
+	ports:
+		- targetPort: 80
+		  port: 80
+	selector:
+		app: myapp
+		type: back-end
+```
 ## Load Balancer
 
+Imaginemos que tenemos un sistema multinodo en K8s donde tenemos 2 aplicaciones de front desplegadas. Tenemos un **NodePort** para la App 1 y otro **NodePort** para la App 2, esto nos crea dos puertos, que se traduce en 2 urls, para poder acceder a las apps en el mismo **cluster**. Al haber multiples nodos, tenemos tantas IPs que nodos para cada servicio. Dado el carácter distribuido no quiere decir que todos los nodos tenga un **POD** de alguna de las dos Apps. 
+
+La solución consiste en poner un `Load Balancer` delante del cluster y expone esto solo al usuario, K8s ya nos da el servicio **LoadBalancer** para reducir el trabajo de configuración si hay soporte, si estamos en el Cloud tiene una integración por defecto con sus **LoadBalancer**. Si el entorno no esta soportado, se comporta como un **NodePort** entonces
+
+Su definición es igual que la de un **NodePort**
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata: 
+	name: myapp-service
+spec:
+	type: LoadBalancer
+	ports:
+		- targetPort: 80
+		  port: 80
+		  nodePort: 30008
+	selector:
+		app: myapp
+		type: front-end
+```
 
 ### IDE
 Puedes configurar schemas en la app de YAML para tener validators custom
