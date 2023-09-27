@@ -398,8 +398,8 @@ spec:
 		  nodePort: 30008
 ```
 
-### IDE
+# IDE
 Puedes configurar schemas en la app de YAML para tener validators custom
 
-## References
+# References
 [K8s official documentation](https://kubernetes.io/docs/concepts/workloads/pods/)
