@@ -404,3 +404,10 @@ Puedes configurar schemas en la app de YAML para tener validators custom
 
 # References
 [K8s official documentation](https://kubernetes.io/docs/concepts/workloads/pods/)
+
+
+
+TO REVIEW
+
+Warning: resource pods/nginx-question-2 is missing the kubectl.kubernetes.io/last-applied-configuration annotation which is required by kubectl apply. kubectl apply should only be used on resources created declaratively by either kubectl create --save-config or kubectl apply. The missing annotation will be patched automatically.
+pod/nginx-question-2 configured
