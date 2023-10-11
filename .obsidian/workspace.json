@@ -30,19 +30,9 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "74ebbdd52a2080b2",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.4.14"
-              }
-            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -198,7 +188,7 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "74ebbdd52a2080b2",
+  "active": "fad40c58c675941e",
   "lastOpenFiles": [
     "Untitled.md",
     "K8s/Absolute Beginner Coures/Kubernetes Concepts.md",
