@@ -35,8 +35,11 @@ Por conocimiento previo de la librería, entre los tres me parece que tiene una 
 
 #### Configuración de Playwright
 
-La configuración es un poco especial, ya que cada instancia de test levantará un Express, con el código final, e iniciar Mock Service Worker, en adelante MSW. Esta configuración tan fuera de lo estándar, en vez de tener un MSW y Express configurado para toda la suite, es por los siguientes motivos:
+La configuración se sale un poco de lo común, ya que cada instancia de test levantará un Express, con el código final, e iniciar Mock Service Worker, en adelante MSW. Esta configuración tan fuera de lo estándar, en vez de tener un MSW y Express configurado para toda la suite, es por los siguientes motivos:
 
-- 
+- Esta configuración me da la posibilidad de controlar los fetchs que se hacen en el servidor de Express, en este caso las peticiones a Tinybird. Esto control me da la posibilidad de generar response lentas, response erroneas y tener una batería de tests para evitar regresiones. 
+- Reescribir la petición inicial de la página sería mucho más complejo, entre el SSR y el Streaming Mode.
+- Mis tests son más cercanos a un flow completo de usuario ya que estoy testeando el código de cliente y servidor, sin apenas mocks.
 
+Esta configuración s
 ## Next steps
