@@ -11,7 +11,7 @@ Por los siguientes motivos:
 ### UI Components
 He usado Tremor ya que nos da una batería de componentes preparados para realizar visualizaciones e inputs distintos.
 ### Tests
-Para los tests he decidido usar Storybook, junto con Remix-testing, y Playwright, cada librería para unos tipos de test en concreto.
+Para los tests he decidido usar Storybook, junto con Remix-testing, y Playwright, cada librería para unos tipos de test en concreto. Por extensión 
 
 #### ¿Por qué no Vitest/Jest junto con JSDOM/Happy-DOM?.
 
@@ -37,9 +37,16 @@ Por conocimiento previo de la librería, entre los tres me parece que tiene una 
 
 La configuración se sale un poco de lo común, ya que cada instancia de test levantará un Express, con el código final, e iniciar Mock Service Worker, en adelante MSW. Esta configuración tan fuera de lo estándar, en vez de tener un MSW y Express configurado para toda la suite, es por los siguientes motivos:
 
-- Esta configuración me da la posibilidad de controlar los fetchs que se hacen en el servidor de Express, en este caso las peticiones a Tinybird. Esto control me da la posibilidad de generar response lentas, response erroneas y tener una batería de tests para evitar regresiones. 
+- Esta configuración me da la posibilidad de controlar los fetchs que se hacen en el servidor de Express, en este caso las peticiones a Tinybird. Esto control me da la posibilidad de generar response lentas, response erronéas y tener una batería de tests para evitar regresiones. 
 - Reescribir la petición inicial de la página sería mucho más complejo, entre el SSR y el Streaming Mode.
 - Mis tests son más cercanos a un flow completo de usuario ya que estoy testeando el código de cliente y servidor, sin apenas mocks.
 
-Esta configuración s
+Esta configuración debería de ser posible de traducir a NextJS. 
+
+#### Efectos negativos de mis decisiones
+Lo mencionado anterior son las cosas buenas que me dan estas herramientas, lo malo que los tests en este caso no son tan rápidos que usando JSDOM/Happy-DOM pero en mi opinión prefiero una batería de tests más confiables que velocidad.
+
+### UI/UX
+
+Para la UI/UX he decido implementarlo usando Streaming, que en NextJS lo mas parecido son Parallel Routes.
 ## Next steps
