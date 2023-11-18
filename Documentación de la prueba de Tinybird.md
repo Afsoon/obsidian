@@ -54,6 +54,16 @@ Para la UI/UX he decido implementarlo usando Streaming*. He decidido ir por esta
 - Se hace transformaciones en código de una de las response de Tinybird, para acomodar los datos a Tremor y no hacerlo en cliente. No se puede asumir siempre que el cliente es un dispositivo rápido. 
 
 #### Efectos negativos de mis decisiones
-La feature que más se parece a Remix Streaming es NextJS Parallel Routes pero no es lo mismo, no es igual porque Remix esta devolviendo promesas, mientras que NextJS son rutas completas. En Remix es importante tener cuidado como ordenas las promesas, en el caso de hacer un await, ya que un mal Await rompería  
+
+##### Remix Streaming es fácil cometer un fallo
+Hay que tener cuidado en como se ordenas las promesas, todas las promesas que tienen que resueltas si o si desde el principio tiene que ir al principio del Loader, el resto tiene que ir al final. Ahora son pocas promesas, pero si tenemos mas peticiones a terceros y promesas dependientes nos obliga 
+
+La implementación más parecida en NestJS sería con Parallel Routes, y en este caso el ciclo de promesas esta aislado por ruta, no tendríamos el problema que existe en Remix.
+
+##### La petición para obtener las zonas de taxi.
+Actualmente solo hago un await, si esta response es lenta perdemos las ventajas de tener un TTFB muy bajo. Para reducir la probabilidad de este problema se podría cachear pero esto solo debería de resolverse si vemos que la mediana, p95 y p99 es muy alto, ya que hacer una cache tiene sus problemas asociados.
+
+##### Los componentes de loading
+Para evitar tener mucho CLS, hay que tener asegurarse que los componentes de loading ocupen el mismo espacio. Algunas veces suele ser difícil, en este caso buscar el valor lo mas cercano posible pero una acumulación de componentes con distintas alturas y anchos puede producirlo, el workaround es acumulativo. 
 
 ## Next steps
