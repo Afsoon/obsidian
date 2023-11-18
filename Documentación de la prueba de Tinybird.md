@@ -48,5 +48,12 @@ Lo mencionado anterior son las cosas buenas que me dan estas herramientas, lo ma
 
 ### UI/UX
 
-Para la UI/UX he decido implementarlo usando Streaming, que en NextJS lo mas parecido son Parallel Routes.
+Para la UI/UX he decido implementarlo usando Streaming*. He decidido ir por esta ruta ya que en el código se hace lo siguiente:
+- Peticiones a servicios de terceros, en este caso Tinybird. Nunca podemos confiar que la red siempre es rápida y/o que el servidor siempre es rápido.
+- Relacionado con lo anterior, este diseño nos permite reducir el TTFB.
+- Se hace transformaciones en código de una de las response de Tinybird, para acomodar los datos a Tremor y no hacerlo en cliente. No se puede asumir siempre que el cliente es un dispositivo rápido. 
+
+#### Efectos negativos de mis decisiones
+
+
 ## Next steps
