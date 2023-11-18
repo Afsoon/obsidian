@@ -54,6 +54,6 @@ Para la UI/UX he decido implementarlo usando Streaming*. He decidido ir por esta
 - Se hace transformaciones en código de una de las response de Tinybird, para acomodar los datos a Tremor y no hacerlo en cliente. No se puede asumir siempre que el cliente es un dispositivo rápido. 
 
 #### Efectos negativos de mis decisiones
-
+La feature que más se parece a Remix Streaming es NextJS Parallel Routes pero no es lo mismo, no es igual porque Remix esta devolviendo promesas, mientras que NextJS son rutas completas. En Remix es importante tener cuidado como ordenas las promesas, en el caso de hacer un await, ya que un mal Await rompería  
 
 ## Next steps
