@@ -15,6 +15,15 @@ npm run dev
 Si queremos forzar que las peticiones a Tinybird son lentas, y ver que la página carga sin esperar a sus respuesta, vamos al fichero `route` que se encuentra en `/app/routes/_index/route.tsx`, y en la línea 38, cambiamos la variable `NO_DELAY` por `SEE_LOADING`.
 
 En el caso de querer ver el mensaje de error, de la response no se ha resuelto, entonces en la misma línea, cambiar la variable por `SEE_ERROR`.
+
+## Estructura del proyecto
+
+Todo el código relevante a la aplicación se encuentra en `app`, dentro de esta carpeta hay dos carpetas a tener en cuenta:
+
+- Services: Aquí va todo el código relacionado con el backend, peticiones a Tinybird y transformacions
+- Routes: Todo la parte de React de renderizar y su api handler por rutas.
+
+Los test de
 ## Decisions
 ### Framework
 El proyecto se ha realizado usando Remix, concretamente la plantilla Indie stack. ¿Por qué he decido usar Remix y una plantilla en vez de NextJS 13/14?.
