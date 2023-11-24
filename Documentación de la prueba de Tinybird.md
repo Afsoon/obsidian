@@ -1,9 +1,20 @@
 # Tinybird assignment
 ## Development
 Para ejecutar el proyecto primero hay que instalar todas las dependencias:
+
 ```
 npm install
 ```
+
+Una vez instalado las dependencias, solo tenemos que ejecutar el proyecto con el siguiente comando:
+
+```
+npm run dev
+```
+
+Si queremos forzar que las peticiones a Tinybird son lentas, y ver que la página carga sin esperar a sus respuesta, vamos al fichero `route` que se encuentra en `/app/routes/_index/route.tsx`, y en la línea 38, cambiamos la variable `NO_DELAY` por `SEE_LOADING`.
+
+En el caso de querer ver el mensaje de error, de la response no se ha resuelto, entonces en la misma línea, cambiar la variable por `SEE_ERROR`.
 ## Decisions
 ### Framework
 El proyecto se ha realizado usando Remix, concretamente la plantilla Indie stack. ¿Por qué he decido usar Remix y una plantilla en vez de NextJS 13/14?.
@@ -82,13 +93,14 @@ Hay varios aspectos de la UX que se han omitido en favor de la velocidad, pero q
 ### Infra
 - Configurar correctamente un CI/CD que compruebe estilo de código, typechecking y los tests de playwright y storybook.
 - Elegir una plataforma para hacer deploy y que permita Streaming, en este caso puede ser Vercel o una imagen de docker de NodeJS con el server de Remix Express.
+- Mover las API TOKEN a un secrets manager, como puede ser Vault, Infiscal o cualquier cosa parecida.
 ### Implementación
 - Sugar syntax: Crear un Tagged String que se encarga de hacer toda la lógica del query builder para la request a Tinybird.
 - Meter los selecto dentro de un formulario en vez de apoyarnos que el hook de React Router que actualiza los search paramos refresque la página. Como se ha dicho antes, en cierto aspectos se ha hecho incapie en ir rápido.
 - Investigar si es posible hacer el resultado final de los datos usando solo SQL y evitar tener que procesar los datos con JS, la parte de hidratación y moldeado para Tremor. Aunque se hace en servidor, lo suyo sería que se hiciera en Tinybird.
-- Hacer un wrapper de los componentes usados, es decir, en vez de importar directamente desde Tremor, crear los componentes por nuestra lado y reimportarlo. Esto con miras en el futuro de si queremos migrar el componente, solo tengamos que modificarlo en un punto y no en varios. Quedaría la siguiente estructura
+- Hacer un wrapper de los componentes usados, es decir, en vez de importar directamente desde Tremor, crear los componentes por nuestra lado y reimportarlo. Esto con miras en el futuro de si queremos migrar el componente, solo tengamos que modificarlo en un punto y no en varios. Quedaría la siguiente estructura:
 ```
-src
+app
 |
 |
 |----> components
