@@ -20,10 +20,10 @@ En el caso de querer ver el mensaje de error, de la response no se ha resuelto, 
 
 Todo el código relevante a la aplicación se encuentra en `app`, dentro de esta carpeta hay dos carpetas a tener en cuenta:
 
-- Services: Aquí va todo el código relacionado con el backend, peticiones a Tinybird y transformacions
-- Routes: Todo la parte de React de renderizar y su api handler por rutas.
+- Services: Aquí va todo el código relacionado con el backend, peticiones a Tinybird y transformacioness
+- Routes: Todo la parte de React de renderizar y las rutas.
 
-Los test de
+Los test de **Playwright** se encuentra en la carpeta `e2e`.
 ## Decisions
 ### Framework
 El proyecto se ha realizado usando Remix, concretamente la plantilla Indie stack. ¿Por qué he decido usar Remix y una plantilla en vez de NextJS 13/14?.
