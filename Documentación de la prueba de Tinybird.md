@@ -67,3 +67,22 @@ Actualmente solo hago un await, si esta response es lenta perdemos las ventajas 
 Para evitar tener mucho CLS, hay que tener asegurarse que los componentes de loading ocupen el mismo espacio. Algunas veces suele ser difícil, en este caso buscar el valor lo mas cercano posible pero una acumulación de componentes con distintas alturas y anchos puede producirlo, el workaround es acumulativo. 
 
 ## Next steps
+
+Ahora pasamos todos los aspectos que se han dejado fuera, por tiempo no se han implementado, o como seguiría iterando. Los he divido en bloques para evitar cambios de contextos entre un punto y otro.
+### UI/UX
+Hay varios aspectos de la UX que se han omitido en favor de la velocidad, pero que en caso de ocurrir fallaría catastróficamente la app.
+- La primera es la dependencia que tenemos a la petición para obtener todas las zonas de un taxi. Puede ocasionar dos problemas
+- Un TTFB lento ya que el servidor no manda ninguna respuesta hasta que se resuelva la promesa del fetch.
+- Que el endpoint nos devuelva un 500 y no podamos hidratar correctamente los datos para mostrarlos en el gráfico.
+- Mejorar los mensajes de error basados de si hemos tenido un Timeout, un 500 o un 400. Ahora mismo tenemos un mensaje genérico que no indica al usuario de como puede continuar.
+- Añadir Error Boundary para en caso de haber un error, no haga bubble hasta la raíz.
+### Infra
+- Configurar correctamente un CI/CD que compruebe estilo de código, typechecking y los tests de playwright y storybook.
+- Elegir una plataforma para hacer deploy y que permita Streaming, en este caso puede ser Vercel o una imagen de docker de NodeJS con el server de Remix Express.
+### Implementación
+- Sugar syntax: Crear un Tagged String que se encarga de hacer toda la lógica del query builder para la request a Tinybird.
+- Meter los selecto dentro de un formulario en vez de apoyarnos que el hook de React Router que actualiza los search paramos refresque la página. Como se ha dicho antes, en cierto aspectos se ha hecho incapie en ir rápido.
+- Investigar si es posible hacer el resultado final de los datos usando solo SQL y evitar tener que procesar los datos con JS, la parte de hidratación y moldeado para Tremor. Aunque se hace en servidor, lo suyo sería que se hiciera en Tinybird.
+- Hacer un wrapper de los componentes usados, es decir, en vez de importar directamente desde Tremor, crear los componentes por nuestra lado y reimportarlo. Esto con miras en el futuro de si queremos migrar el componente, solo tengamos que modificarlo en un punto y no en varios.
+### Testing
+- Añadir tests que falta de search params y error paths en Playwright.
