@@ -1,6 +1,9 @@
 # Tinybird assignment
 ## Development
-Como ejecutar el proyecto:
+Para ejecutar el proyecto primero hay que instalar todas las dependencias:
+```
+npm install
+```
 ## Decisions
 ### Framework
 El proyecto se ha realizado usando Remix, concretamente la plantilla Indie stack. ¿Por qué he decido usar Remix y una plantilla en vez de NextJS 13/14?.
@@ -83,6 +86,26 @@ Hay varios aspectos de la UX que se han omitido en favor de la velocidad, pero q
 - Sugar syntax: Crear un Tagged String que se encarga de hacer toda la lógica del query builder para la request a Tinybird.
 - Meter los selecto dentro de un formulario en vez de apoyarnos que el hook de React Router que actualiza los search paramos refresque la página. Como se ha dicho antes, en cierto aspectos se ha hecho incapie en ir rápido.
 - Investigar si es posible hacer el resultado final de los datos usando solo SQL y evitar tener que procesar los datos con JS, la parte de hidratación y moldeado para Tremor. Aunque se hace en servidor, lo suyo sería que se hiciera en Tinybird.
-- Hacer un wrapper de los componentes usados, es decir, en vez de importar directamente desde Tremor, crear los componentes por nuestra lado y reimportarlo. Esto con miras en el futuro de si queremos migrar el componente, solo tengamos que modificarlo en un punto y no en varios.
+- Hacer un wrapper de los componentes usados, es decir, en vez de importar directamente desde Tremor, crear los componentes por nuestra lado y reimportarlo. Esto con miras en el futuro de si queremos migrar el componente, solo tengamos que modificarlo en un punto y no en varios. Quedaría la siguiente estructura
+```
+src
+|
+|
+|----> components
+		|
+		|---> Text
+		|---> Card
+|----> routes 
+
+// The components will implemented the following way
+
+import { Text as TremorText } from '@tremor/react'
+
+export const Text = TremorText;
+
+// Then in our files we do the following import
+import { Text } from '@src/components/Text'
+```
 ### Testing
 - Añadir tests que falta de search params y error paths en Playwright.
+- Mejorar las funciones de generar datos para los tests, algunos valores ahora mismo no se generan a partir de otros.
