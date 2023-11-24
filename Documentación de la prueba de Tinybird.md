@@ -104,9 +104,9 @@ app
 |
 |
 |----> components
-		|
-		|---> Text
-		|---> Card
+|		|
+|		|---> Text
+|		|---> Card
 |----> routes 
 
 // The components will implemented the following way
