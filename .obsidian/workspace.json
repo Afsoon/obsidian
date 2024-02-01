@@ -32,24 +32,36 @@
             }
           },
           {
-            "id": "25c9aa557e59fd87",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Documentación de la prueba de Tinybird.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "6588a09e4e999634",
             "type": "leaf",
             "state": {
               "type": "release-notes",
               "state": {
                 "currentVersion": "1.4.16"
+              }
+            }
+          },
+          {
+            "id": "1916ea65ffb94584",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1af668db699d22c0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "conflict-files-obsidian-git.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -128,7 +140,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Documentación de la prueba de Tinybird.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -145,7 +157,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Documentación de la prueba de Tinybird.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -168,7 +180,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Documentación de la prueba de Tinybird.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -186,7 +198,9 @@
             "state": {
               "type": "all-properties",
               "state": {
-                "sortOrder": "frequency"
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
               }
             }
           }
@@ -210,8 +224,13 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "6588a09e4e999634",
+  "active": "a998ee0dbdce50af",
   "lastOpenFiles": [
+    "conflict-files-obsidian-git.md",
+    "Otros/Documentación de la prueba de Tinybird.md",
+    "Otros",
+    "Ops/Tailscale + VPS + PiHole.md",
+    "Ops",
     "K8s/Absolute Beginner Coures/Kubernetes Concepts.md",
     "Documentación de la prueba de Tinybird.md",
     "Untitled.md",
