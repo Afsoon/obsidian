@@ -128,7 +128,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Ops/Tailscale + VPS + PiHole.md",
+                "file": "K8s/Absolute Beginner Coures/Kubernetes Concepts.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -145,7 +145,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Ops/Tailscale + VPS + PiHole.md",
+                "file": "K8s/Absolute Beginner Coures/Kubernetes Concepts.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -168,7 +168,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Ops/Tailscale + VPS + PiHole.md"
+                "file": "K8s/Absolute Beginner Coures/Kubernetes Concepts.md"
               }
             }
           },
