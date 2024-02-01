@@ -4,57 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "c977c34be6bebcfc",
+        "id": "3f7ece78208dd4fd",
         "type": "tabs",
         "children": [
           {
-            "id": "c6690341741e8d06",
+            "id": "40685775013df51e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "K8s/Absolute Beginner Coures/Kubernetes Concepts.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "fad40c58c675941e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "K8s/Absolute Beginner Coures/Kubernetes Concepts.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "3b74f8cb72caf642",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.4.16"
-              }
-            }
-          },
-          {
-            "id": "a0f9ed67ba390e8f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Ops/Tailscale + VPS + PiHole.md",
+                "file": "conflict-files-obsidian-git.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -128,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "K8s/Absolute Beginner Coures/Kubernetes Concepts.md",
+                "file": "conflict-files-obsidian-git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -145,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "K8s/Absolute Beginner Coures/Kubernetes Concepts.md",
+                "file": "conflict-files-obsidian-git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -168,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "K8s/Absolute Beginner Coures/Kubernetes Concepts.md"
+                "file": "conflict-files-obsidian-git.md"
               }
             }
           },
@@ -212,11 +177,25 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "a998ee0dbdce50af",
+  "active": "40685775013df51e",
   "lastOpenFiles": [
+    "Others/Documentación de la prueba de Tinybird.md",
+    "Others",
+    "Gymker/Remix Stack Development.md",
+    "Gymker",
+    "Duckhouse/Clickhouse Service.md",
+    "Duckhouse",
+    "Books/Writing for Software Development.md",
+    "Books",
+    "Blog/Testing/Node/Testcontainers + Node (ES).md",
+    "Blog/Testing/Node/Testcontainers + Node (EN).md",
+    "Blog/Testing/Node",
+    "Blog/Testing",
+    "conflict-files-obsidian-git.md",
+    "Ops/Tailscale + VPS + PiHole.md",
+    "K8s/Absolute Beginner Coures/Kubernetes Concepts.md",
     "Blog",
     "Otros/Documentación de la prueba de Tinybird.md",
-    "Ops/Tailscale + VPS + PiHole.md",
     "Ops",
     "Otros",
     "Pasted image 20230904163337.png",
@@ -224,10 +203,8 @@
     "AWS/AWS Certified Cloud Practitioner/IAM.md",
     "AWS/AWS Certified Cloud Practitioner/EC2 - Computer.md",
     "AWS/AWS Certified Cloud Practitioner/Anki Questions.md",
-    "K8s/Absolute Beginner Coures/Kubernetes Concepts.md",
     "K8s/Absolute Beginner Coures/Anki Questions.md",
     "Untitled.md",
-    "conflict-files-obsidian-git.md",
     "Pasted image 20230920062935.png",
     "Pasted image 20230920062951.png",
     "Pasted image 20230920062949.png",
@@ -239,7 +216,6 @@
     "Pasted image 20230904164023.png",
     "Pasted image 20230904164034.png",
     "AWS/AWS Certified Cloud Practitioner",
-    "AWS",
     "Typescript/Untitled.md",
     "K8s/Untitled.md"
   ]
