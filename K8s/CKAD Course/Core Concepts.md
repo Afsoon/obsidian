@@ -61,7 +61,6 @@ kubectl get pod <pod-name> -o yaml > pod-definition.yaml -> Si el pod ya existe
 kubectl edit pod <pod-name> -> solo permite modificar las propiedades:
 
 - spec.containers[*].image
-    
 - spec.initContainers[*].image
 - spec.activeDeadlineSeconds
 - spec.tolerations
