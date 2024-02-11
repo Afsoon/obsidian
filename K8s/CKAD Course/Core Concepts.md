@@ -74,3 +74,12 @@ kubectl edit pod <pod-name> -> solo permite modificar las propiedades:
 
 > [!NOTE] Del curso de Absolute Beginners K8s
 > Ver la sección de ReplicaSets para ver como crear un YAML para PODS [[Kubernetes Concepts]]
+
+Nos ayuda mantener una alta disponibilidad, balancear la carga o escalar el numero de **Pods** y **Node**.
+
+Una gran diferencia entre **ReplicaController** y **ReplicaSet**, el ultimo permite manejar **PODs** que son creados fuera de la definición del fichero.
+
+Otra diferencia es que puedes crear el **ReplicaSet** después de crear los **PODs**, si no existe la misma cantidad, añadirá los **PODs** que quedan. Aunque los **PODs** ya existan **SIEMPRE** tienes que escribir la propiedad **template** porque los **PODs** pueden fallar y tener que recrearlo desde nuevo.
+
+> [!WARNING] Borrado de ReplicaSets
+> Si se borra un **ReplicaSets**, también se borra los **PODs** que esta monitorizando
