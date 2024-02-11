@@ -93,3 +93,11 @@ kubectl explain replicaset
 
 kubect delete rs <replica-set-name>
 ```
+
+### Deployments
+
+> [!NOTE] Del curso de Absolute Beginners K8s
+> 
+> Ver la sección de Deployments para ver como crear un YAML para PODS [Kubernetes Concepts](app://obsidian.md/Kubernetes%20Concepts)
+
+
