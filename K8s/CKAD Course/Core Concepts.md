@@ -49,3 +49,26 @@ Las características que tiene un **POD** son:
 - Comparten el mismo namespace de networking y espacio.
 
 Ver la sección de PODS para ver como crear un YAML para PODS [[Kubernetes Concepts]]
+### Notas del labs
+
+```
+kubectl get pods -o wide -> Muestra mas información de los pods del namespace
+
+kubectl run <name> --image=<image> --dry-run=client -o yaml > filename.yml -> Vale esto nos genera un yml con toda la información base para crear un POD.
+
+kubectl get pod <pod-name> -o yaml > pod-definition.yaml -> Si el pod ya existe, genera un yaml con la misma configuración.
+
+kubectl edit pod <pod-name> -> solo permite modificar las propiedades:
+
+- spec.containers[*].image
+    
+- spec.initContainers[*].image
+- spec.activeDeadlineSeconds
+- spec.tolerations
+- spec.terminationGracePeriodSeconds
+```
+
+> [!NOTE] Declerative vs Imperative
+> El comando que se ha usado en las soluciones muestra un warning cuando se hace el edit, mas adelante se hablará de las dos formas de hacer YAML y como solventar ese error.
+
+
