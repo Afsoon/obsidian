@@ -70,4 +70,7 @@ kubectl edit pod <pod-name> -> solo permite modificar las propiedades:
 > [!NOTE] Declerative vs Imperative
 > El comando que se ha usado en las soluciones muestra un warning cuando se hace el edit, mas adelante se hablará de las dos formas de hacer YAML y como solventar ese error.
 
+### ReplicaSet
 
+> [!NOTE] Del curso de Absolute Beginners K8s
+> Ver la sección de ReplicaSets para ver como crear un YAML para PODS [[Kubernetes Concepts]]
