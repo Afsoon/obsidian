@@ -42,3 +42,10 @@ Crictl es una herramienta que se usa en K8s para hacer debugging en K8s.
 
 ### Pods
 
+Es la unidad minima que K8s puede crear. Un **Pod** es una instancia de tu aplicación. Primer se escalan los **PODs** en un aumento de usuarios, pero si el **Node** no puede con el trabajo, se crea un nuevo **Node**.
+
+Las características que tiene un **POD** son:
+- Puede contener más de un **container**. Esto significa que si un POD se elimina, se elimina **todas los containers**.
+- Comparten el mismo namespace de networking y espacio.
+
+Ver la sección de PODS para ver como crear un YAML para PODS [[Kubernetes Concepts]]
