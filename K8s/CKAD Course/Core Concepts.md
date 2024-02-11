@@ -101,3 +101,5 @@ kubect delete rs <replica-set-name>
 > Ver la sección de Deployments para ver como crear un YAML para PODS [Kubernetes Concepts](app://obsidian.md/Kubernetes%20Concepts)
 
 
+### Namespaces
+
