@@ -86,4 +86,10 @@ Otra diferencia es que puedes crear el **ReplicaSet** después de crear los **PO
 #### Notas del Lab
 ```
 k scale --replicas=<amount> -f <replica filename>.yml -> Modificar en runtime el numero de replicas de un ReplicaSet
+
+kubectl describe replicaset <replica-set-name>
+
+kubectl explain replicaset
+
+kubect delete rs <replica-set-name>
 ```
