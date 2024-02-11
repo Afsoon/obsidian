@@ -83,3 +83,7 @@ Otra diferencia es que puedes crear el **ReplicaSet** después de crear los **PO
 
 > [!WARNING] Borrado de ReplicaSets
 > Si se borra un **ReplicaSets**, también se borra los **PODs** que esta monitorizando
+#### Notas del Lab
+```
+k scale --replicas=<amount> -f <replica filename>.yml -> Modificar en runtime el numero de replicas de un ReplicaSet
+```
