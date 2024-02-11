@@ -1,6 +1,6 @@
 ## Recap Concepts
 ### Node
-Es una instancia, aka Server, donde puede contender varios PODs.
+Es una instancia, aka VM, donde puede contender varios PODs.
 
 ### Cluster
 Es un conjuntos de **Nodes**.
@@ -32,4 +32,13 @@ kubectl get nodes -> Los nodos de un cluster
 
 ### Docker VS ContainerD
 
-#### Docker
+Nerdclt es una cli con una api similar a Docker pero para ContainerD.
+
+Crictl es una herramienta que se usa en K8s para hacer debugging en K8s.
+
+> [!NOTE] Discusiones de Github a sobre el uso de Crictl y expandir esta sección
+> https://github.com/kubernetes-sigs/cri-tools/issues/868
+> https://github.com/kubernetes-sigs/cri-tools/pull/869
+
+### Pods
+
