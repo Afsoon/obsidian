@@ -70,6 +70,10 @@ kubectl edit pod <pod-name> -> solo permite modificar las propiedades:
 > [!NOTE] Declerative vs Imperative
 > El comando que se ha usado en las soluciones muestra un warning cuando se hace el edit, mas adelante se hablará de las dos formas de hacer YAML y como solventar ese error.
 
+
+> [!NOTE] Editando pods
+> Si se modifica un POD en runtime y se toca alguna propiedad que no es editable, el editor no te dejará guardar pero se creará un fichero temporal en `/tmp`, ver la ruta que indique K8s, que se puede usar para borrar el POD y crear un nuevo POD con la nueva config.
+
 ### ReplicaSet
 
 > [!NOTE] Del curso de Absolute Beginners K8s
@@ -100,6 +104,9 @@ kubect delete rs <replica-set-name>
 > 
 > Ver la sección de Deployments para ver como crear un YAML para PODS [Kubernetes Concepts](app://obsidian.md/Kubernetes%20Concepts)
 
+
+> [!NOTE] Editando un deployment creado
+> Modificar un POD de un deployment que esta creado 
 
 ### Namespaces
 Por defecto hay 3 namespaces creados por k8s:
