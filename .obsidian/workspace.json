@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "K8s/CKAD Course/Core Concepts.md",
+                "file": "K8s/CKAD Course/Configuration.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "K8s/CKAD Course/Core Concepts.md",
+                "file": "K8s/CKAD Course/Configuration.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "K8s/CKAD Course/Core Concepts.md",
+                "file": "K8s/CKAD Course/Configuration.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "K8s/CKAD Course/Core Concepts.md"
+                "file": "K8s/CKAD Course/Configuration.md"
               }
             }
           },
@@ -180,8 +180,8 @@
   "active": "ab10d5d424b7c01d",
   "lastOpenFiles": [
     "K8s/CKAD Course/Certification Tips.md",
-    "K8s/CKAD Course/Configuration.md",
     "K8s/CKAD Course/Core Concepts.md",
+    "K8s/CKAD Course/Configuration.md",
     "K8s/Absolute Beginner Coures/Kubernetes Concepts.md",
     "K8s/Absolute Beginner Coures/Anki Questions.md",
     "Others/TBA Title.md",

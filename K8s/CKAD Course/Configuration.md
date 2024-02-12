@@ -31,3 +31,5 @@ spec:
 		  command: ["sleep2.0"] // Es el entrypoint
 		  args: ["10"] // Es el CMD
 ```
+
+### Labs

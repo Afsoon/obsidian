@@ -106,7 +106,7 @@ kubect delete rs <replica-set-name>
 
 
 > [!NOTE] Editando un deployment creado
-> Modificar un POD de un deployment que esta creado 
+> Podemos modificar todas las propiedades de un POD en un Deployment que esta ya creado. Esto es debido a que cada cambio, automáticamente va a borrar y crear los nuevos PODs
 
 ### Namespaces
 Por defecto hay 3 namespaces creados por k8s:
