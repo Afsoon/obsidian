@@ -33,3 +33,8 @@ spec:
 ```
 
 ### Labs
+```
+k replace --force -f <filename>
+
+
+```
