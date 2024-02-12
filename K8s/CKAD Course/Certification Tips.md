@@ -27,6 +27,10 @@ Use the above two in combination along with Linux output redirection to generate
 
 `kubectl run nginx --image=nginx`
 
+**Create a Redis Pod with labels**
+
+`k run redis --image=redis:alpine --labels="tier=db"`
+
 **Generate POD Manifest YAML file (-o yaml). Don't create it(--dry-run)**
 
 `kubectl run nginx --image=nginx --dry-run=client -o yaml`
