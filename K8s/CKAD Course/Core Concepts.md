@@ -112,9 +112,47 @@ Cada namespace puede tener sus propias **policies** y **quota storage and cpus**
 
 K8s tiene su propio DNS interno donde lleva el registro de todos los servicios con su namespace como parte de la URL. Si los servicios están dentro del mismo **namespace** la url es solo su nombre del servicio, pero si esta en otro servicio entonces la URL es:
 
-`db-service.dev.svc.cluster.local`
+`db-service.dev.svc.cluster.local` esta URL esta formado por:
+
+- `db-service`: el nombre del servicio
+- `dev`: namespace name
+- `svc`: subdomain del servicio
+- `cluster.local`: La url del cluster por defecto.
 
 
 ```
-k 
+k get pods --namespace=<namespace> -> ver los pods en un namespace
+
+k create -f file --namespace=<namespace> -> crea el pod en otro namespace.
+
+k config set-context $(kubectl config current-context) --namespace=<namespace> -> Para cambiar de namespace y no tener que estar pasando siempre el namespace.
+
+ k get pods --all-namespaces -> Ver todos los PODs en todos los namespaces
 ```
+
+Los **PODS** se crean por defecto en el **namespace por defecto**, para crearlos en otros puede ser a partir del comando o añadiendo en el Metadata:
+- `namespace: name`
+
+#### YAML Namespace
+``` yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+	name: dev
+```
+##### YAML ResourceQuota
+```
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+	name: compute-quota
+	namespace: dev
+spec:
+	hard:
+		pods: "10"
+		request.cpu: "4"
+		request.memory: 5Gi
+		limits.cpu: "10"
+		limits.memory: 10Gi
+```
+
