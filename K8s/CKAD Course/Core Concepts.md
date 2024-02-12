@@ -116,18 +116,20 @@ K8s tiene su propio DNS interno donde lleva el registro de todos los servicios c
 
 - `db-service`: el nombre del servicio
 - `dev`: namespace name
-- `svc`: subdomain del servicio
+- `svc`: subdomain de servicio
 - `cluster.local`: La url del cluster por defecto.
 
 
 ```
-k get pods --namespace=<namespace> -> ver los pods en un namespace
+k get pods --namespace/n=<namespace> -> ver los pods en un namespace
 
-k create -f file --namespace=<namespace> -> crea el pod en otro namespace.
+k create -f file --namespace/n=<namespace> -> crea el pod en otro namespace.
 
-k config set-context $(kubectl config current-context) --namespace=<namespace> -> Para cambiar de namespace y no tener que estar pasando siempre el namespace.
+k config set-context $(kubectl config current-context) --namespace/n=<namespace> -> Para cambiar de namespace y no tener que estar pasando siempre el namespace.
 
- k get pods --all-namespaces -> Ver todos los PODs en todos los namespaces
+k get pods --all-namespaces -> Ver todos los PODs en todos los namespaces
+
+k get ns -> Ver todos los namespaces
 ```
 
 Los **PODS** se crean por defecto en el **namespace por defecto**, para crearlos en otros puede ser a partir del comando o añadiendo en el Metadata:
