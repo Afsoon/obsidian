@@ -102,4 +102,19 @@ kubect delete rs <replica-set-name>
 
 
 ### Namespaces
+Por defecto hay 3 namespaces creados por k8s:
 
+- kube-system: Todos los servicios necesarios para hacer funcionar k8s, se hace para evitar que los modifiques por accedente.
+- kube-public: Todos los servicios que son de cara al público.
+- default: Es el entorno en el que trabajas por defecto.
+
+Cada namespace puede tener sus propias **policies** y **quota storage and cpus**
+
+K8s tiene su propio DNS interno donde lleva el registro de todos los servicios con su namespace como parte de la URL. Si los servicios están dentro del mismo **namespace** la url es solo su nombre del servicio, pero si esta en otro servicio entonces la URL es:
+
+`db-service.dev.svc.cluster.local`
+
+
+```
+k 
+```
