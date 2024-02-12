@@ -36,5 +36,10 @@ spec:
 ```
 k replace --force -f <filename>
 
+k run web --image <image> -- <args> -> Hace un override del CMD de Docker
 
+k run web --image <image> --command -- <cmd> <args>
 ```
+
+## Environment Variables
+### ConfigMaps
