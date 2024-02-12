@@ -31,6 +31,11 @@ Use the above two in combination along with Linux output redirection to generate
 
 `k run redis --image=redis:alpine --labels="tier=db"`
 
+**Create a POD with a Cluster IP associated**
+
+`k run httpd --image=httpd:alpine --port=80 --expose=true`
+It creates automatically an associated ClusterIP to this POD.
+
 **Generate POD Manifest YAML file (-o yaml). Don't create it(--dry-run)**
 
 `kubectl run nginx --image=nginx --dry-run=client -o yaml`
