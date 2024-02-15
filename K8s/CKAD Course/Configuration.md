@@ -102,3 +102,23 @@ spec:
 > Añadir esto en volumes en como inyectar un **ConfigMap**
 > configMap:
 > 	name: app-config
+### Labs
+```
+apiVersion: v1
+kind: Pod
+metadata:
+	name: example
+spec:
+	containers:
+		- name: app
+		  image: app
+		  env:
+			  - name: APP_COLOR
+				valueFrom:	
+					configMapKeyRef:
+						name: webapp-app-config
+						key: APP_COLOR
+```
+
+
+## Secrets
