@@ -83,3 +83,22 @@ spec:
 ```
 
 Si queremos insertar solo algunas Keys en el POD es de la siguiente forma:
+```
+apiVersion: v1
+kind: Pod
+metadata:
+	name: example
+spec:
+	containers:
+		- name: app
+		  image: app
+		  envFrom:
+			  - configMapKeyRef:
+				  name: app-config
+				  key: APP_COLOR
+```
+
+> [!WARNING] Cuando toquemos Volumes
+> Añadir esto en volumes en como inyectar un **ConfigMap**
+> configMap:
+> 	name: app-config
