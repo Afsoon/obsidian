@@ -229,20 +229,17 @@ Nada que anotar de las soluciones
 La configuración de **Docker Security** se puede crear desde **K8s** donde tenemos la posibilidad de:
 - Crear un contexto padre donde afecte a todos los **containers** que se crean dentro de un **POD**, de la siguiente forma:
 ```
-```
 apiVersion: v1
 kind: Pod
 metadata:
 	name: web-pod
 spec:
+	securityContext:
+	  runAsUSer: 1000
 	containers:
 		- name: ubuntu
 		  image: ubuntu
 		  command: []
-		  securityContext:
-			  runAsUSer: 1000
-			  capabilities:
-				  add: ["MAC_ADMIN"]
 ```
 - Modificar solo a nivel de **container** los privilegios del **root user**, de la siguiente forma:
 ```
@@ -258,6 +255,11 @@ spec:
 		  securityContext:
 			  runAsUSer: 1000
 			  capabilities:
-				  add: ["MAC_ADMIN"]
+				  add: ["MAC_ADMIN"] 
 ```
-Se puede crear contextos donde los **PODs** creados dentro de ese **Security Context** compartan la misma configuración de **Docker Security** que crees.
+
+> [!Warning] La propiedad **capabilities**
+> La propiedad **capabilites** solo se puede modificar a nivel de **container** y no a nivel de **POD**.
+
+#### Labs
+- Los **security context** se puede mezclar tanto a nivel de **POD** como de **container**, se hace un merge de propiedades donde las más cercanas tienen prioridad.
