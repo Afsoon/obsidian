@@ -214,5 +214,4 @@ Read about the [protections](https://kubernetes.io/docs/concepts/configuration/s
 
 Having said that, there are other better ways of handling sensitive data like passwords in Kubernetes, such as using tools like Helm Secrets, [HashiCorp Vault](https://www.vaultproject.io/). I hope to make a lecture on these in the future.
 </details>
-
-[protections](https://kubernetes.io/docs/concepts/configuration/secret/#protections)
+### Labs
