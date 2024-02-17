@@ -215,3 +215,49 @@ Read about the [protections](https://kubernetes.io/docs/concepts/configuration/s
 Having said that, there are other better ways of handling sensitive data like passwords in Kubernetes, such as using tools like Helm Secrets, [HashiCorp Vault](https://www.vaultproject.io/). I hope to make a lecture on these in the future.
 </details>
 ### Labs
+Nada que anotar de las soluciones
+
+## Security Context
+### Docker Security
+
+#### Cosas que sabía
+- Docker por defecto ejecuta todo como root user, y que puedes configurarlo para que se ejecute con otro user.
+- Los containers estas aislados a través de **namespaces**.
+#### Cosas que no sabía
+- Que puedes quitar y añadir los privilegios de root, Docker ya quitas algunos que puede ser destructivos para los contenedores
+### K8s
+La configuración de **Docker Security** se puede crear desde **K8s** donde tenemos la posibilidad de:
+- Crear un contexto padre donde afecte a todos los **containers** que se crean dentro de un **POD**, de la siguiente forma:
+```
+```
+apiVersion: v1
+kind: Pod
+metadata:
+	name: web-pod
+spec:
+	containers:
+		- name: ubuntu
+		  image: ubuntu
+		  command: []
+		  securityContext:
+			  runAsUSer: 1000
+			  capabilities:
+				  add: ["MAC_ADMIN"]
+```
+- Modificar solo a nivel de **container** los privilegios del **root user**, de la siguiente forma:
+```
+apiVersion: v1
+kind: Pod
+metadata:
+	name: web-pod
+spec:
+	containers:
+		- name: ubuntu
+		  image: ubuntu
+		  command: []
+		  securityContext:
+			  runAsUSer: 1000
+			  capabilities:
+				  add: ["MAC_ADMIN"]
+```
+Se puede crear contextos donde los **PODs** creados dentro de ese **Security Context** compartan la misma configuración de **Docker Security** que crees.
