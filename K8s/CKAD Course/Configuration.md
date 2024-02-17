@@ -122,3 +122,31 @@ spec:
 
 
 ## Secrets
+
+Es un KV donde el value esta guardado en **Base64**, es decir, no es un sistema seguro para guardar valores. El objetivo es no tener los valores en plano. Los **Secrets** tienen la siguiente estructura YAML:
+```
+apiVersion: v1
+kind: Secret
+metadata:
+	name: app-secret
+data:
+	APP_COLOR: <base64value>
+```
+
+
+La forma imperativa es más incómodo que es la siguiente:
+```
+Imperativo y KV directamente:
+
+k create secret app-secret \
+ --from-literal=APP_COLOR=BLUE
+
+Imperativo y a partir de un fichero
+
+k create secret app-secret --from-file=<name>.properties
+```
+
+Para convertir la información en texto plano, en la CLI se puede hacer lo siguiente:
+```
+echo -n "text" | base64
+```
