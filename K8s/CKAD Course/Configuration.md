@@ -55,7 +55,7 @@ data:
 ```
 
 
-La forma imperativa es más incómodo que es la siguiente:
+La forma imperativa, es más incómodo, que es la siguiente:
 ```
 Imperativo y KV directamente:
 
@@ -135,16 +135,16 @@ data:
 ```
 
 
-La forma imperativa es más incómodo que es la siguiente:
+La forma imperativa, es más incómodo, que es la siguiente:
 ```
 Imperativo y KV directamente:
 
-k create secret app-secret \
+k create secret generic app-secret \
  --from-literal=APP_COLOR=BLUE
 
 Imperativo y a partir de un fichero
 
-k create secret app-secret --from-file=<name>.properties
+k create secret generic app-secret --from-file=<name>.properties
 ```
 
 Para convertir la información en texto plano, en la CLI se puede hacer lo siguiente:
