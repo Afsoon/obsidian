@@ -263,3 +263,5 @@ spec:
 
 #### Labs
 - Los **security context** se puede mezclar tanto a nivel de **POD** como de **container**, se hace un merge de propiedades donde las más cercanas tienen prioridad.
+- Para ejecutar como root un **container**, hay que omitir `runAsUser`, no vale con poner 1.
+- `k exec <pod-name> -- whoami` para saber el usuario que esta ejecutando el **container**.

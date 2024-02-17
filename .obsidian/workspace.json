@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "K8s/CKAD Course/Configuration.md",
+                "file": "Inglés/Reglas.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "K8s/CKAD Course/Configuration.md",
+                "file": "Inglés/Reglas.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "K8s/CKAD Course/Configuration.md",
+                "file": "Inglés/Reglas.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "K8s/CKAD Course/Configuration.md"
+                "file": "Inglés/Reglas.md"
               }
             }
           },
@@ -179,14 +179,22 @@
   },
   "active": "ab10d5d424b7c01d",
   "lastOpenFiles": [
-    "K8s/CKAD Course/Certification Tips.md",
-    "K8s/CKAD Course/Core Concepts.md",
+    "Inglés/Pronunciación.md",
+    "Inglés/C1 - Test.md",
+    "Blog/Testing/Node/Testcontainers + Node (ES).md",
+    "Blog/Testing/Node/Testcontainers + Node (EN).md",
+    "Books/Writing for Software Development.md",
     "K8s/CKAD Course/Configuration.md",
+    "K8s/CKAD Course/Core Concepts.md",
+    "Ops/Tailscale + VPS + PiHole.md",
+    "Pasted image 20240211073221.png",
+    "Pasted image 20230904163337.png",
+    "Pasted image 20230904163137.png",
+    "K8s/CKAD Course/Certification Tips.md",
     "Others/TBA Title.md",
     "K8s/Absolute Beginner Coures/Kubernetes Concepts.md",
     "K8s/Absolute Beginner Coures/Anki Questions.md",
     "Pasted image 20240211080235.png",
-    "Pasted image 20240211073221.png",
     "Pasted image 20240211080154.png",
     "Untitled.md",
     "conflict-files-obsidian-git.md",
@@ -196,19 +204,13 @@
     "Gymker",
     "Duckhouse/Clickhouse Service.md",
     "Duckhouse",
-    "Books/Writing for Software Development.md",
     "Books",
-    "Blog/Testing/Node/Testcontainers + Node (ES).md",
-    "Blog/Testing/Node/Testcontainers + Node (EN).md",
     "Blog/Testing/Node",
     "Blog/Testing",
-    "Ops/Tailscale + VPS + PiHole.md",
     "Blog",
     "Otros/Documentación de la prueba de Tinybird.md",
     "Ops",
     "Otros",
-    "Pasted image 20230904163337.png",
-    "Pasted image 20230904163137.png",
     "AWS/AWS Certified Cloud Practitioner/IAM.md",
     "AWS/AWS Certified Cloud Practitioner/EC2 - Computer.md",
     "AWS/AWS Certified Cloud Practitioner/Anki Questions.md",
@@ -216,8 +218,6 @@
     "Pasted image 20230920062951.png",
     "Pasted image 20230920062949.png",
     "Inglés/Reglas.md",
-    "Inglés/C1 - Test.md",
-    "Inglés/Pronunciación.md",
     "Pasted image 20230904164443.png",
     "Pasted image 20230904163406.png",
     "AWS/AWS Certified Cloud Practitioner",
