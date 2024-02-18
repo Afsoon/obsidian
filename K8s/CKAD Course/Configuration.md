@@ -283,10 +283,47 @@ Cuando creamos un **ServiceAccount**, un token es creado **automáticamente** y 
 ```
 k describe serviceaccount dashboard-sa
 
-T
+Tokens: dashboard-sa-token-kbbdm
 // Se mostrará el nombre del secreto, NO el valor
 ```
 Este token esta guardado en un **Secret**, por lo tanto, para ver el valor del token tenemos que ver la información del **Secret** con:
 ```
-k describe server <service-account-secret-token-name>
+k describe secret <service-account-secret-token-name>
+k describe secret Tokens: dashboard-sa-token-kbbdm
 ```
+Este **Token** es usado como un **Bearer** **authentication**. 
+
+Los **ServiceAccounts** se le puede asignar un sistema de roles de accesos (RBAC).
+
+El sistema definido es para los sistemas esta fuera K8s para comunicarse, pero si los servicios se encuentran dentro del cluster. ¿Existe alguna forma más fácil de inyectar el secretos en los **PODs**?. La respuesta es si, estos secretos se inyectan como un volumen en los **PODs** y estos ficheros se encuentra en la siguiente ruta:
+
+- `/var/run/secrets/kubernets.io/serviceaccount/`
+
+Cuando estamos definiendo un **POD**, tenemos que indicar que **ServiceAccount** queremos relacionarle, de la siguiente forma:
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+	name: example-pod-sa
+spec:
+	containers:
+		- name: my-k8s-dashboard
+		  containers: my
+	serviceAccountName: dashboard-sa
+```
+
+K8s por defecto añade el **ServiceAccount** por defecto, si no queremos que haga esto, tenemos que indicar en el **POD** de la siguiente forma:
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+	name: example-pod-sa
+spec:
+	containers:
+		- name: my-k8s-dashboard
+		  containers: my
+	automountServiceAccountToken: false
+```
+
