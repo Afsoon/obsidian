@@ -265,3 +265,28 @@ spec:
 - Los **security context** se puede mezclar tanto a nivel de **POD** como de **container**, se hace un merge de propiedades donde las más cercanas tienen prioridad.
 - Para ejecutar como root un **container**, hay que omitir `runAsUser`, no vale con poner 1.
 - `k exec <pod-name> -- whoami` para saber el usuario que esta ejecutando el **container**.
+## ServiceAccounts
+Hay dos tipos de cuentas en K8s,
+
+- User Accounts
+- Service accounts: Estas cuentas interactuan con las API de K8s, por ejemplo **Prometheus** para sacar métricas, **Jenkins** para desplegar de forma automatizada.
+
+Para crear un **ServiceAccount** hay que hacer lo siguiente:
+```
+k create serviceaccount dashboard-sa
+
+k get serviceaccount
+```
+
+Cuando creamos un **ServiceAccount**, un token es creado **automáticamente** y este es el que deben de usar los servicios. Para ver el token podemos hacer:
+
+```
+k describe serviceaccount dashboard-sa
+
+T
+// Se mostrará el nombre del secreto, NO el valor
+```
+Este token esta guardado en un **Secret**, por lo tanto, para ver el valor del token tenemos que ver la información del **Secret** con:
+```
+k describe server <service-account-secret-token-name>
+```
