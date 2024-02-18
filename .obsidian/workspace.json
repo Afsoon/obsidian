@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "K8s/CKAD Course/Configuration.md",
+                "file": "Books/Writing for Software Development.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "K8s/CKAD Course/Configuration.md",
+                "file": "Books/Writing for Software Development.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "K8s/CKAD Course/Configuration.md",
+                "file": "Books/Writing for Software Development.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "K8s/CKAD Course/Configuration.md"
+                "file": "Books/Writing for Software Development.md"
               }
             }
           },
@@ -177,13 +177,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ab10d5d424b7c01d",
+  "active": "a998ee0dbdce50af",
   "lastOpenFiles": [
-    "K8s/CKAD Course/Core Concepts.md",
-    "K8s/CKAD Course/Configuration.md",
+    "Duckhouse/Clickhouse Service.md",
     "Inglés/Reglas.md",
     "Inglés/Pronunciación.md",
     "Inglés/C1 - Test.md",
+    "K8s/CKAD Course/Configuration.md",
+    "K8s/CKAD Course/Core Concepts.md",
     "Blog/Testing/Node/Testcontainers + Node (ES).md",
     "Blog/Testing/Node/Testcontainers + Node (EN).md",
     "Books/Writing for Software Development.md",
@@ -203,7 +204,6 @@
     "Others",
     "Gymker/Remix Stack Development.md",
     "Gymker",
-    "Duckhouse/Clickhouse Service.md",
     "Duckhouse",
     "Books",
     "Blog/Testing/Node",
