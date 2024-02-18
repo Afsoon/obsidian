@@ -327,3 +327,36 @@ spec:
 	automountServiceAccountToken: false
 ```
 
+### Cambios en K8s 1.22 & 1.24
+
+Pre 1.22, los tokens no estaban limitados de ninguna forma, en otras palabras, era válido todo el tiempo que el **ServiceAccount** existía. Esto generaba problemas de escabilidad, necesitaba un **Secret object** por cada token, y de seguridad, tiempo, usuarios.
+
+En K8s 1.22 se introdujo la **TokenRequestAPI** donde estos tokens si estaban limitados por:
+- Audiencia
+- Tiempo
+- Object
+
+A partir de este momento los **PODs** crean un **Projected volumen** donde se puede ver una expiración del token.
+
+En K8s 1.24 cuando creamos un **ServiceAccount** ya no se crea un **Secret** con un token. Si queremos un token, tenemos que generarlo de la siguiente forma:
+
+```
+k create token dashboard-sa
+
+// Mostrará por pantalla el token
+```
+
+Estos tokens generados **ya tienen una fecha de expiración**. El comportamiento antiguo no ha sido borrado, se queremos el antiguo flow tenemos que hacer lo siguiente:
+
+```
+apiVersion: v1
+kind: Secret
+type: kubernetes.io/service-account-token
+metadata:
+	name: mysecretname
+
+	annotations:
+		kubernets.io/service-account.name: dashboard-sa
+```
+
+Pero este método ya solo se deberías de usar si el uso de Tokens que no expiran es aceptable para tu caso de uso, en cualquier otra sit
