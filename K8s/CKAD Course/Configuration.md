@@ -362,3 +362,7 @@ metadata:
 Pero este método ya solo se deberías de usar si el uso de Tokens que no expiran es aceptable para tu caso de uso, en cualquier otra situación, mejor usar el nuevo flow.
 
 ### Labs
+Nada que añadir
+
+## Resource Requirements
+
