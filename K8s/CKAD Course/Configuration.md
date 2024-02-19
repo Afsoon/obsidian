@@ -373,7 +373,7 @@ Si no hay nodos disponibles, el **POD** se quedará en **pending state** y habr�
 FailedScheduling: No nodes are available that match all of the following predicates:: Insuficiente cpu (3)
 ```
 
-Por defecto, 
+Por defecto, los **PODs** no tienen limites de recursos y podrán crecer hasta quedarse con toda la CPU y memoria asignada a un **nodo**.
 
 Durante la definición de los **PODs** puedes poner los recursos que necesita cada **container** para funcionar, la definición de los recursos es de la siguiente forma:
 ```
@@ -418,8 +418,37 @@ spec:
 			  cpu: 4
 ```
 
-Vale, establecemos unos limites pero no es un **hard limit** para la memoria, pero si para la **CPU**. El contenedor puede pasarse de su límite de memoria pero si es exceso continuo, el contenedor pasará a un estado de **Terminate** con un mensaje de error de **OOM**.
+Vale, establecemos unos limites pero no es un **hard limit** para la memoria, pero si para la **CPU**. El **POD** puede pasarse de su límite de memoria pero si es exceso continuo, el **POD** pasará a un estado de **Terminate** con un mensaje de error de **OOM**.
 
+Una posible definición "estándar" de recursos de CPU a los **PODs** es establecer la CPU necesita pero no añadir un limite de CPU. Como siempre, esto basado en tu caso de uso y de contexto.
+
+Cuando dos **PODs** compiten por memoria, hay que tener bastante cuidado porque si se llega al límite y no hay más memoria, este acabará acabando con el **POD** y liberará memoria.
+
+Sabemos que por defecto no se crean límite para los **PODs** pero podemos crear **objetos de K8s** para tener una **common configuration** para esto. Estos objetos se crean de la siguiente forma:
+
+```
+apiVersion: v1
+kind: LimitRange
+metadata:
+	name: cpu-resource-constraint
+spec:
+	limits:
+	- default:
+		  cpu: 500m
+	  defaultRequest:
+		  cpu: 500m
+	  max:
+		  cpu: "1"
+	  min:
+		  cpu: 100m
+	  type: Container
+```
+
+Estos límite se aplica a nivel de namespace.
+
+
+> [!NOTE] Creación de limites con PODs ya ex
+> Contents
 
 #### ¿Qué significan las medidas?
 
