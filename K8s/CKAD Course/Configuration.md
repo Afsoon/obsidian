@@ -444,12 +444,25 @@ spec:
 	  type: Container
 ```
 
-Estos límite se aplica a nivel de namespace.
+Estos límite se aplica a nivel de namespace, es decir, todos los **PODs** del namespace tienen estos límites
 
+> [!NOTE] Solo aplica a nuevos **PODs**
+> Si creamos estos límites con **PODs** existente, estos no se verán afectados por estos límites. Solo los **PODs** nuevos creados tendrá esta limitación inyectada en sus definiciones.
 
-> [!NOTE] Creación de limites con PODs ya ex
-> Contents
+Otro paso ya para restringir los recursos es con **ResourceQuotas**, estos cambios afecta a nivel de Namespace. Este **objeto de K8s** sirve para establecer límites a los recursos que un **PODs** puede pedir, la definición de este **objeto** es la siguiente:
 
+```
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+	name: my-resource-quota
+spec:
+	hard:
+		requests.cpu: 4
+		requests.memory: 4Gi
+		limits.cpu: 10
+		limits.memory: 10Gi
+```
 #### ¿Qué significan las medidas?
 
 Empezamos por la CPU, el valor más bajo que se puede poner es:
@@ -457,4 +470,14 @@ Empezamos por la CPU, el valor más bajo que se puede poner es:
 - **CPU 1**: En AWS es 1 vCPU,  En GCP es 1 Core,  En Azure es 1 Core o bare metal es 1 Hyperthread.
 
 La memoria se puede denotar usando las unidades **(M|G|K)i**, o escribiendo directamente los bytes que necesitas.
+
+#### Resources
+
+Para expandir más sobre este concepto
+
+- [Manage Memory, CPU and API Resource](https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/)
+- [LimitRange for CPU](https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/)
+- [LimitRange for Memory](https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/)
+
+### Labs
 
