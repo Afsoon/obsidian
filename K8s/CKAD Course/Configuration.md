@@ -366,3 +366,29 @@ Nada que añadir
 
 ## Resource Requirements
 
+**kube-scheduler** se encarga de buscar cual es el Node ideal para que el **POD** se cree, basado en los recursos que necesita el **POD** y el **estado de los nodos**.
+
+Si no hay nodos disponibles, el **POD** se quedará en **pending state** y habrá un fallo de:
+```
+FailedScheduling: No nodes are available that match all of the following predicates:: Insuficiente cpu (3)
+```
+
+Durante la definición de los **PODs** puedes poner los recursos que necesita cada **container** para funcionar, la definición de los recursos es de la siguiente forma:
+```
+apiVerison: v1
+kind: Pod
+metadata:
+	name: simple-weabpp-color
+	labels:
+		name: simple-webapp-color
+spec:
+	conatiners:
+	- name: simple-webapp-color
+	  image: simple-webapp-color
+	  ports:
+		  - containersPort: 8080
+	  resources:
+		  requests:
+			  memory: "4Gi"
+			  cpu: 2
+```
