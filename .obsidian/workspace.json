@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Others/TBA Title.md",
+                "file": "Others/Git.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Others/TBA Title.md",
+                "file": "Others/Git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Others/TBA Title.md",
+                "file": "Others/Git.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Others/TBA Title.md"
+                "file": "Others/Git.md"
               }
             }
           },
@@ -177,12 +177,15 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "a998ee0dbdce50af",
+  "active": "ab10d5d424b7c01d",
   "lastOpenFiles": [
+    "Duckhouse/Clickhouse Service.md",
+    "Others/Git.md",
+    "Gymker/Remix Stack Development.md",
+    "Others/TBA Title.md",
     "K8s/CKAD Course/Configuration.md",
     "K8s/CKAD Course/Core Concepts.md",
     "Books/Writing for Software Development.md",
-    "Duckhouse/Clickhouse Service.md",
     "Inglés/Reglas.md",
     "Inglés/Pronunciación.md",
     "Inglés/C1 - Test.md",
@@ -193,7 +196,6 @@
     "Pasted image 20230904163337.png",
     "Pasted image 20230904163137.png",
     "K8s/CKAD Course/Certification Tips.md",
-    "Others/TBA Title.md",
     "K8s/Absolute Beginner Coures/Kubernetes Concepts.md",
     "K8s/Absolute Beginner Coures/Anki Questions.md",
     "Pasted image 20240211080235.png",
@@ -202,7 +204,6 @@
     "conflict-files-obsidian-git.md",
     "Others/Documentación de la prueba de Tinybird.md",
     "Others",
-    "Gymker/Remix Stack Development.md",
     "Gymker",
     "Duckhouse",
     "Books",
