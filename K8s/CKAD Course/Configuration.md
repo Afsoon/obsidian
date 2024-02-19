@@ -373,6 +373,8 @@ Si no hay nodos disponibles, el **POD** se quedará en **pending state** y habr�
 FailedScheduling: No nodes are available that match all of the following predicates:: Insuficiente cpu (3)
 ```
 
+Por defecto, 
+
 Durante la definición de los **PODs** puedes poner los recursos que necesita cada **container** para funcionar, la definición de los recursos es de la siguiente forma:
 ```
 apiVerison: v1
@@ -392,3 +394,38 @@ spec:
 			  memory: "4Gi"
 			  cpu: 2
 ```
+
+Igual que podemos crearlos con unas requisitos concretos, podemos añadirles unos límites para evitar que el uso del contenedor crezca. Para añadir limites tenemos que tener la siguiente configuración:
+```
+apiVerison: v1
+kind: Pod
+metadata:
+	name: simple-weabpp-color
+	labels:
+		name: simple-webapp-color
+spec:
+	conatiners:
+	- name: simple-webapp-color
+	  image: simple-webapp-color
+	  ports:
+		  - containersPort: 8080
+	  resources:
+		  requests:
+			  memory: "4Gi"
+			  cpu: 2
+		  limits:
+			  memory: "8Gi"
+			  cpu: 4
+```
+
+Vale, establecemos unos limites pero no es un **hard limit** para la memoria, pero si para la **CPU**. El contenedor puede pasarse de su límite de memoria pero si es exceso continuo, el contenedor pasará a un estado de **Terminate** con un mensaje de error de **OOM**.
+
+
+#### ¿Qué significan las medidas?
+
+Empezamos por la CPU, el valor más bajo que se puede poner es:
+- El valor mas bajo posible es **1m**
+- **CPU 1**: En AWS es 1 vCPU,  En GCP es 1 Core,  En Azure es 1 Core o bare metal es 1 Hyperthread.
+
+La memoria se puede denotar usando las unidades **(M|G|K)i**, o escribiendo directamente los bytes que necesitas.
+
