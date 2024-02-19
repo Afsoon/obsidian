@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Ops/Tailscale + VPS + PiHole.md",
+                "file": "Gymker/Remix Stack Development.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Ops/Tailscale + VPS + PiHole.md",
+                "file": "Gymker/Remix Stack Development.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Ops/Tailscale + VPS + PiHole.md",
+                "file": "Gymker/Remix Stack Development.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Ops/Tailscale + VPS + PiHole.md"
+                "file": "Gymker/Remix Stack Development.md"
               }
             }
           },
@@ -177,8 +177,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "ab10d5d424b7c01d",
+  "active": "a998ee0dbdce50af",
   "lastOpenFiles": [
+    "Ops/Tailscale + VPS + PiHole.md",
     "Others/Git.md",
     "Duckhouse/Clickhouse Service.md",
     "Gymker/Remix Stack Development.md",
@@ -191,7 +192,6 @@
     "Inglés/C1 - Test.md",
     "Blog/Testing/Node/Testcontainers + Node (ES).md",
     "Blog/Testing/Node/Testcontainers + Node (EN).md",
-    "Ops/Tailscale + VPS + PiHole.md",
     "Pasted image 20240211073221.png",
     "Pasted image 20230904163337.png",
     "Pasted image 20230904163137.png",
