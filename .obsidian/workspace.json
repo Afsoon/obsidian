@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Others/Git.md",
+                "file": "Ops/Tailscale + VPS + PiHole.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Others/Git.md",
+                "file": "Ops/Tailscale + VPS + PiHole.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Others/Git.md",
+                "file": "Ops/Tailscale + VPS + PiHole.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Others/Git.md"
+                "file": "Ops/Tailscale + VPS + PiHole.md"
               }
             }
           },
@@ -179,8 +179,8 @@
   },
   "active": "ab10d5d424b7c01d",
   "lastOpenFiles": [
-    "Duckhouse/Clickhouse Service.md",
     "Others/Git.md",
+    "Duckhouse/Clickhouse Service.md",
     "Gymker/Remix Stack Development.md",
     "Others/TBA Title.md",
     "K8s/CKAD Course/Configuration.md",
